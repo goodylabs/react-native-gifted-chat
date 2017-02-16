@@ -200,6 +200,9 @@ class GiftedChat extends React.Component {
   }
 
   onKeyboardWillShow(e) {
+    if(this.props.disableKeyboardProcessing){
+      return;
+    }
     this.setIsTypingDisabled(true);
     this.setKeyboardHeight(e.endCoordinates ? e.endCoordinates.height : e.end.height);
     this.setBottomOffset(this.props.bottomOffset);

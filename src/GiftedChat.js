@@ -64,7 +64,7 @@ class GiftedChat extends React.Component {
 
     this.invertibleScrollViewProps = {
       inverted: true,
-      keyboardShouldPersistTaps: this.props.keyboardShouldPersistTaps,
+      keyboardShouldPersistTaps: this.props.keyboardShouldPersistTapsEnabled,
       onKeyboardWillShow: this.onKeyboardWillShow,
       onKeyboardWillHide: this.onKeyboardWillHide,
       onKeyboardDidShow: this.onKeyboardDidShow,
@@ -422,7 +422,7 @@ class GiftedChat extends React.Component {
             text: '',
             composerHeight: MIN_COMPOSER_HEIGHT,
             messagesContainerHeight: this.prepareMessagesContainerHeight(this.getMaxHeight() - this.getMinInputToolbarHeight()),
-          });          
+          });
         }}
       >
         {this.renderLoading()}
@@ -507,6 +507,7 @@ GiftedChat.propTypes = {
   user: React.PropTypes.object,
   bottomOffset: React.PropTypes.number,
   isLoadingEarlier: React.PropTypes.bool,
+  keyboardShouldPersistTapsEnabled: React.PropTypes.bool,
   keyboardShouldPersistTaps: React.PropTypes.oneOf(['always', 'never', 'handled']),
 };
 

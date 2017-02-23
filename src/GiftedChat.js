@@ -63,7 +63,7 @@ class GiftedChat extends React.Component {
     this.getLocale = this.getLocale.bind(this);
 
     this.invertibleScrollViewProps = {
-      inverted: true,
+      inverted: this.props.invertibleScrollViewProps ? this.props.invertibleScrollViewProps.inverted : true,
       keyboardShouldPersistTaps: this.props.keyboardShouldPersistTapsEnabled,
       onKeyboardWillShow: this.onKeyboardWillShow,
       onKeyboardWillHide: this.onKeyboardWillHide,

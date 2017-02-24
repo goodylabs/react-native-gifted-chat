@@ -61,7 +61,7 @@ export default class Message extends React.Component {
 
   render() {
     return (
-      <View>
+       <View style={this.props.messageContainerStyle}>
         {this.renderDay()}
         <View style={[styles[this.props.position].container, {
           marginBottom: isSameUser(this.props.currentMessage, this.props.nextMessage) ? 2 : 10,

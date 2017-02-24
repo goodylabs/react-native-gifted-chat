@@ -42,15 +42,16 @@ export default class Message extends React.Component {
   }
 
   renderAvatar() {
-
-    if (this.props.user._id === this.props.currentMessage.user._id) {
+    const {containerStyle, forceAvatar, ...other} = this.props;
+    if (!forceAvatar && this.props.user._id === this.props.currentMessage.user._id) {
       return null;
     }
 
-    const {containerStyle, ...other} = this.props;
+
     const avatarProps = {
       ...other,
       //TODO: remove in next major release
+      force: forceAvatar,
       isSameUser: warnDeprecated(isSameUser),
       isSameDay: warnDeprecated(isSameDay)
     };

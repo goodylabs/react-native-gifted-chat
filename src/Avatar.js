@@ -34,7 +34,7 @@ export default class Avatar extends React.Component {
       );
     }
     return (
-      <View style={[styles[this.props.position].container, this.props.containerStyle[this.props.position]]}>
+      <View style={[styles[this.props.position].container, this.props.containerStyle[this.props.position], this.props.avatarContainerStyle]}>
         {this.renderAvatar()}
       </View>
     );

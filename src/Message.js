@@ -42,7 +42,7 @@ export default class Message extends React.Component {
   }
 
   renderAvatar() {
-    const {containerStyle, forceAvatar, ...other} = this.props;
+    const {avatarContainerStyle, containerStyle, forceAvatar, ...other} = this.props;
     if (!forceAvatar && this.props.user._id === this.props.currentMessage.user._id) {
       return null;
     }
@@ -53,7 +53,8 @@ export default class Message extends React.Component {
       //TODO: remove in next major release
       force: forceAvatar,
       isSameUser: warnDeprecated(isSameUser),
-      isSameDay: warnDeprecated(isSameDay)
+      isSameDay: warnDeprecated(isSameDay),
+      avatarContainerStyle
     };
     return <Avatar {...avatarProps}/>;
 
